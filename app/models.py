@@ -1,9 +1,8 @@
-from app import app, db
+from app import app
 import sys, os
-from config import CSV_DATA_PATH
 import pandas as pd
 
-
+CSV_DATA_PATH = 'CSV'
 def read_csv(file_name):
     """
     Returns dataframe from requested CSV

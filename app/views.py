@@ -1,5 +1,5 @@
 from flask import json
-from app import app, db
+from app import app
 from models import list_all_room_names, read_csv
 
 
