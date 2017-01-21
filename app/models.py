@@ -3,15 +3,6 @@ import sys, os
 from config import CSV_DATA_PATH
 import pandas as pd
 
-class UCL_info(db.Model):
-    __tablename__='UCL_info'
-    id = db.Column(db.Integer, primary_key = True)
-    room_name = db.Column(db.String(300), nullable=False, unique=True)
-
-
-    def __repr__(self):
-        return '<User %r>' % (self.nickname)
-
 
 def read_csv(file_name):
     """
