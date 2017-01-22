@@ -22,6 +22,6 @@ def list_all_room_names(category, room_keys = ['ROOMID','NAME']):
     for idx, info in df.iterrows():
         room_dict = {}
         for key in room_keys:
-            room_dict[key] = info[key]
+            room_dict[key] = str(info[key])
         list_rooms.append(room_dict)
     return list_rooms
