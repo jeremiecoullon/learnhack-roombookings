@@ -29,6 +29,5 @@ def list_all_room_names(category, room_keys = ['ROOMID','NAME']):
                 room_dict[key]= str(round(info[key])).split('.')[0]
                 if room_dict.get('ROOMAREA') == '-1':
                     room_dict['ROOMAREA'] = 'N/A'
-
         list_rooms.append(room_dict)
     return list_rooms
