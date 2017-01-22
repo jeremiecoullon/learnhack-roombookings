@@ -12,7 +12,7 @@ def home():
 @app.route('/list_rooms')
 def list_rooms():
     # le_json = json.dumps({'home':'hello'})
-    room_keys = ['ROOMID','NAME']
+    room_keys = ['ROOMID','NAME', 'CAPACITY', 'ROOMAREA']
     return json.dumps(list_all_room_names(category='CLU', room_keys=room_keys))
 
 
