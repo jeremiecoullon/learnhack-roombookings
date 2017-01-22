@@ -1,6 +1,7 @@
 from app import app
 import sys, os
 import pandas as pd
+import numpy as np
 
 CSV_DATA_PATH = 'CSV'
 def read_csv(file_name):
@@ -23,5 +24,9 @@ def list_all_room_names(category, room_keys = ['ROOMID','NAME']):
         room_dict = {}
         for key in room_keys:
             room_dict[key] = str(info[key])
+            if key in ['CAPACITY','ROOMAREA']:
+                # hackhackhack: round floats to integers then convert to string
+                room_dict[key]= str(round(info[key])).split('.')[0]
+
         list_rooms.append(room_dict)
     return list_rooms
