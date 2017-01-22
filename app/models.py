@@ -26,7 +26,7 @@ def list_all_room_names(category, room_keys = ['ROOMID','NAME']):
             if key in ['CAPACITY','ROOMAREA']:
                 # hackhackhack: round floats to integers then convert to string
                 room_dict[key]= str(round(info[key])).split('.')[0]
-                if room_dict.get('ROOMAREA') == '-1':
-                    room_dict['ROOMAREA'] = 'N/A'
+            if room_dict.get('ROOMAREA') == '-1':
+                room_dict['ROOMAREA'] = 'N/A'
         list_rooms.append(room_dict)
     return list_rooms
