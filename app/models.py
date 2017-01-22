@@ -1,7 +1,6 @@
 from app import app
 import sys, os
 import pandas as pd
-import numpy as np
 
 CSV_DATA_PATH = 'CSV'
 def read_csv(file_name):
