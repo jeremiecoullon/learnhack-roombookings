@@ -12,16 +12,16 @@ def home():
 @app.route('/list_rooms')
 def list_rooms():
     # le_json = json.dumps({'home':'hello'})
-    room_keys = ['ROOMID','NAME', 'CAPACITY', 'ROOMAREA']
+    room_keys = ['ROOMID','NAME']
     return json.dumps(list_all_room_names(category='CLU', room_keys=room_keys))
 
 
-@app.route('/room_info/<id>')
-def room_info(id):
+@app.route('/room_info')
+def room_info():
     room_keys = ['ROOMID','NAME', 'CAPACITY', 'ROOMAREA']
     list_rooms = list_all_room_names(category='CLU', room_keys=room_keys)
-    selected_room = [elem for elem in list_rooms if elem['ROOMID']==str(id)]
-    return json.dumps(selected_room[0])
+    # selected_room = [elem for elem in list_rooms if elem['ROOMID']==str(id)]
+    return json.dumps(list_rooms)
 
 
 @app.errorhandler(404)
